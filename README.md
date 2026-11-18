@@ -1,12 +1,35 @@
+<div align="center">
+  
 # js-music-player
-This is a simple User Interface of a music player created in HTML, CSS and JavaScript.
+  
+Небольшой легкий плеер использующий HTML, CSS, JAVASCRIPT, NODEJS и SQL.
 
-![Output](/output/html-css.png)
+![Output](/output/html-css.jpg)
 
-## Running the player
+</div>
 
-The index.html file can be run on any modern browser to run the music player.
+## Запуск плеера
 
-## Adding more tracks
+Сайт можно запустить через любой браузер, достаточно скачать последний [релиз](https://github.com/savvhurt/practice/releases/latest).
 
-The tracks are currently being loaded from the tracklist array specified in main.js. More tracks can be added by adding the details of each track as an object to the tracklist.
+Как запустить сервер:
+Нужно зайти в любой IDE и прописать в терминале:
+```bash
+npm run start
+```
+Дальше перейти в браузер и прописать в адресную строку:
+```bash
+localhost:3000
+```
+
+## Регистрация
+
+Для регистрации нужно ввести данные вверху страницы (логин, пароль(не менее 6 символов)).
+
+## Авторизация
+
+Чтобы авторизироваться на сайте нужно пройти **РЕГИСТРАЦИЮ** и также ввести корректные данные в поля сверху.
+
+## Отзывы
+
+Для отправки отзывов на сервер нужно обязательно пройти **АВТОРИЗАЦИЮ** иначе сервер не даст отправить отзыв.
