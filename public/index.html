@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Music Player</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <!-- Шапка с авторизацией -->
+  <header class="auth-bar">
+    <div class="auth-inputs">
+      <input id="auth-username" placeholder="Логин" autocomplete="off">
+      <input id="auth-password" type="password" placeholder="Пароль">
+      <button onclick="doLogin()" class="btn-login">Войти</button>
+      <button onclick="doRegister()" class="btn-register">Регистрация</button>
+    </div>
+    <div class="auth-user">
+      <span id="auth-status">Гость</span>
+      <button onclick="doLogout()" id="logout-btn" style="display:none;">Выйти</button>
+    </div>
+  </header>
+
+  <!-- Основной контент: Плеер (слева) и Отзывы (справа) -->
+  <div class="main-wrapper">
+    
+    <!-- ЛЕВАЯ КОЛОНКА: Плеер (как было) -->
+    <div class="player">
+      <div class="details">
+        <div class="now-playing">PLAYING x OF y</div>
+        <div class="track-art"></div>
+        <div class="track-name">Track Name</div>
+        <div class="track-artist">Track Artist</div>
+      </div>
+      
+      <!-- Кнопки управления (обертки div обязательны для скрипта) -->
+      <div class="buttons">
+        <div class="prev-track" onclick="prevTrack()"><i class="fa fa-step-backward fa-2x"></i></div>
+        <div class="playpause-track" onclick="playpauseTrack()"><i class="fa fa-play-circle fa-5x"></i></div>
+        <div class="next-track" onclick="nextTrack()"><i class="fa fa-step-forward fa-2x"></i></div>
+      </div>
+
+      <div class="slider_container">
+        <div class="current-time">00:00</div>
+        <input type="range" min="0" max="100" value="0" class="seek_slider" onchange="seekTo()">
+        <div class="total-duration">00:00</div>
+      </div>
+      <div class="slider_container">
+        <i class="fa fa-volume-down"></i>
+        <input type="range" min="0" max="100" value="99" class="volume_slider" onchange="setVolume()">
+        <i class="fa fa-volume-up"></i>
+      </div>
+    </div>
+
+    <!-- ПРАВАЯ КОЛОНКА: Отзывы -->
+    <div class="reviews-panel">
+      <h2>Отзывы к треку</h2>
+      
+      <!-- Сюда скрипт будет вставлять отзывы -->
+      <div class="reviews-list" id="reviews-list">
+        <p class="empty-msg">Пока отзывов нет.</p>
+      </div>
+
+      <!-- Форма добавления -->
+      <div class="review-form">
+        <textarea id="review-text" placeholder="Ваш отзыв..." rows="2"></textarea>
+        <div class="review-bottom">
+          <select id="review-rating">
+            <option value="5">5 ★</option>
+            <option value="4">4 ★</option>
+            <option value="3">3 ★</option>
+            <option value="2">2 ★</option>
+            <option value="1">1 ★</option>
+          </select>
+          <button onclick="submitReview()">Отправить</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Load the main script for the player -->
+  <script src="main.js"></script>
+</body>
+</html>
