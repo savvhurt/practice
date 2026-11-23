@@ -15,6 +15,10 @@
 Как запустить сервер:
 Нужно зайти в любой IDE и прописать в терминале:
 ```bash
+npm init
+
+npm i nodemon bcrypt express express-session
+
 npm run start
 ```
 Дальше перейти в браузер и прописать в адресную строку:
