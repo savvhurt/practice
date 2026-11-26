@@ -17,7 +17,7 @@
 ```bash
 npm init
 
-npm i nodemon bcrypt express express-session
+npm i nodemon bcrypt express express-session dotenv
 
 npm run start
 ```
